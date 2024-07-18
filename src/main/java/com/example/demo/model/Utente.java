@@ -1,13 +1,14 @@
 package com.example.demo.model;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+
 
 @Entity
 public class Utente {
@@ -23,10 +24,10 @@ public class Utente {
 	private Date nascita;
 	private boolean privacyLetta;
 	
-	@OneToOne(mappedBy="recensioni")
-	private Long recnesioni_id;
-	@OneToMany(mappedBy="preventivo")
-	private Long preventivo_id;
+	@OneToMany(mappedBy="utenti")
+	private List <Recensioni> recensione;
+	@OneToMany(mappedBy="utenti")
+	private List <Preventivo> preventivo;
 	public Long getId() {
 		return id;
 	}
@@ -75,18 +76,5 @@ public class Utente {
 	public void setPrivacyLetta(boolean privacyLetta) {
 		this.privacyLetta = privacyLetta;
 	}
-	public Long getRecnesioni_id() {
-		return recnesioni_id;
-	}
-	public void setRecnesioni_id(Long recnesioni_id) {
-		this.recnesioni_id = recnesioni_id;
-	}
-	public Long getPreventivo_id() {
-		return preventivo_id;
-	}
-	public void setPreventivo_id(Long preventivo_id) {
-		this.preventivo_id = preventivo_id;
-	}
-	
 	
 }

@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.example.demo.model.Recensioni;
+import com.example.demo.model.Alloggi;
 
 @Repository
-public interface RecensioniRepository extends JpaRepository<Recensioni, Long> {
-	List<Recensioni> findByDestinazione(String destinazione);
+public interface AlloggiRepository extends JpaRepository<Alloggi, Long> {
+	List<Alloggi> findByDestinazione(String destinazione);
 }
