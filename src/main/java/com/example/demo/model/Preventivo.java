@@ -32,7 +32,7 @@ public class Preventivo {
 	
 	@ManyToOne
 	@JoinColumn(name="utenti_id")
-	private Utente utente;
+	private Utente utenti;
 	
 	//getters e setters
 
@@ -133,11 +133,11 @@ public class Preventivo {
 	}
 
 	public Utente getUtente() {
-		return utente;
+		return utenti;
 	}
 
-	public void setUtente(Utente utente) {
-		this.utente = utente;
+	public void setUtente(Utente utenti) {
+		this.utenti = utenti;
 	}
 
 	

@@ -8,5 +8,5 @@ import com.example.demo.model.Alloggi;
 
 @Repository
 public interface AlloggiRepository extends JpaRepository<Alloggi, Long> {
-	List<Alloggi> findByDestinazione(String destinazione);
+	List<Alloggi> findAllBydestinazione_id(Long destinazione_id);
 }

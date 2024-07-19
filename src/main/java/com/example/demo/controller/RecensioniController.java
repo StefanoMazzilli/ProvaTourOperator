@@ -52,9 +52,9 @@ public class RecensioniController {
 		Recensioni recensioni = recensioniRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException ("Recensione non trovata"));
 		recensioniRepository.delete(recensioni);
 	}
-	@GetMapping("/searchByDestinazione")
-	public List<Recensioni> getRecensioniBydestinazione(@RequestParam String destinazione){
-		return recensioniRepository.findByDestinazione(destinazione);
+	@GetMapping("/searchByIdDestinazione")
+	public List<Recensioni> getAllRecensioniBydestinazione_id(@RequestParam Long destinazione_id){
+		return recensioniRepository.findAllBydestinazione_id(destinazione_id);
 	}
 	
 	

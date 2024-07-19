@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ResourceNotFoundException;
-
 import com.example.demo.model.Preventivo;
 import com.example.demo.repository.PreventivoRepository;
 @CrossOrigin
@@ -60,9 +59,8 @@ public class PreventivoController {
 		Preventivo preventivo = preventivoRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException ("Preventivo non trovato"));
 		preventivoRepository.delete(preventivo);		
 	}
-	@GetMapping("/searchByDestinazione")
-	public List<Preventivo> getPreventivoBydestinazione(@RequestParam String destinazione){
-		return preventivoRepository.findByDestinazione(destinazione);
+	@GetMapping("/searchByIdDestinazione")
+	public List<Preventivo> getAllPreventivoBydestinazione_id(@RequestParam Long destinazione_id){
+		return preventivoRepository.findAllBydestinazione_id(destinazione_id);
 	}
-
 }

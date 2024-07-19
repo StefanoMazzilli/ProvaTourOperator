@@ -53,8 +53,8 @@ public class DestinazioniController {
 	}
 	
 	@GetMapping("/searchByNome")
-	public List<Destinazioni> getDestinazioniByNome(@RequestParam String name){
-		return destinazioneRepository.findByNome(name);
+	public List<Destinazioni> getDestinazioniByNome(@RequestParam String nome){
+		return destinazioneRepository.findByNome(nome);
 	}
 	@GetMapping("/searchByNomeContaining")
 	public List<Destinazioni> getDestinazioneByNomeContaining(@RequestParam String nomePart) {

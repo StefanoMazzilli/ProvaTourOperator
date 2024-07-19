@@ -22,6 +22,9 @@ public class Destinazioni {
 	@OneToMany(mappedBy="destinazione")
 	private List <Preventivo> preventivo;
 	
+	@OneToMany(mappedBy="destinazione")
+	private List <Alloggi> alloggi;
+	
 	//getters e setters
 	
 	public Long getId() {

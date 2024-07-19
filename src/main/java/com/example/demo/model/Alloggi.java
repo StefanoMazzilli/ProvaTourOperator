@@ -13,11 +13,14 @@ public class Alloggi {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	private String nome;
 	private String descrizione;
 	private double prezzo;
+	private int sconto;
 	private int stelle;
+	
 	@ManyToOne
-	@JoinColumn(name="destinazioni_id")
+	@JoinColumn(name="destinazione_id")
 	private Destinazioni destinazione;
 	
 	
@@ -28,6 +31,15 @@ public class Alloggi {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 
 	public String getDescrizione() {
 		return descrizione;
@@ -63,7 +75,13 @@ public class Alloggi {
 		this.prezzo = prezzo;
 	}
 
-	
+	public int getSconto() {
+		return sconto;
+	}
+
+	public void setSconto(int sconto) {
+		this.sconto = sconto;
+	}
 	
 
 }

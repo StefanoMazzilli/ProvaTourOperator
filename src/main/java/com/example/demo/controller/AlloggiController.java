@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Alloggi;
-
 import com.example.demo.repository.AlloggiRepository;
 
 @CrossOrigin
@@ -42,9 +41,11 @@ public class AlloggiController {
 	@PutMapping("/{id}")
 	public Alloggi updateAlloggio(@PathVariable Long id, @RequestBody Alloggi alloggiDetails) {
 		Alloggi alloggi = alloggiRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException ("Alloggio non trovato"));
+		alloggi.setNome(alloggiDetails.getNome());
 		alloggi.setDestinazione(alloggiDetails.getDestinazione());
 		alloggi.setDescrizione(alloggiDetails.getDescrizione());
 		alloggi.setPrezzo(alloggiDetails.getPrezzo());
+		alloggi.setSconto(alloggiDetails.getSconto());
 		alloggi.setStelle(alloggiDetails.getStelle());
 		return alloggiRepository.save(alloggi);
 	}
@@ -54,9 +55,9 @@ public class AlloggiController {
 		Alloggi alloggi = alloggiRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException ("Alloggio non trovato"));
 		alloggiRepository.delete(alloggi);
 	}
-	@GetMapping("/searchByDestinazione")
-	public List<Alloggi> getAlloggiBydestinazione(@RequestParam String destinazione){
-		return alloggiRepository.findByDestinazione(destinazione);
+	@GetMapping("/searchByIdDestinazione")
+	public List<Alloggi> getAllAlloggiBydestinazione_id(@RequestParam Long destinazione_id){
+		return alloggiRepository.findAllBydestinazione_id(destinazione_id);
 	}
 	
 }

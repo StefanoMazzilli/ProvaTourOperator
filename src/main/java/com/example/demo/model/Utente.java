@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -21,7 +22,7 @@ public class Utente {
 	private String email;
 	private String password;
 	private String confermaPassword;
-	private Date nascita;
+	private LocalDate nascita;
 	private boolean privacyLetta;
 	
 	@OneToMany(mappedBy="utenti")
@@ -64,10 +65,10 @@ public class Utente {
 	public void setConfermaPassword(String confermaPassword) {
 		this.confermaPassword = confermaPassword;
 	}
-	public Date getNascita() {
+	public LocalDate getNascita() {
 		return nascita;
 	}
-	public void setNascita(Date nascita) {
+	public void setNascita(LocalDate nascita) {
 		this.nascita = nascita;
 	}
 	public boolean isPrivacyLetta() {

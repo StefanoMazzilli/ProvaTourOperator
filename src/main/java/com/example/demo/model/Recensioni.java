@@ -18,9 +18,9 @@ public class Recensioni {
 	private int voto;
 	@ManyToOne
 	@JoinColumn(name="utente_id")
-	private Utente utente;
+	private Utente utenti;
 	@ManyToOne
-	@JoinColumn(name="destinazioni_id")
+	@JoinColumn(name="destinazione_id")
 	private Destinazioni destinazione;
 	
 	/*
@@ -59,10 +59,10 @@ public class Recensioni {
 		this.voto = voto;
 	}
 	public Utente getUtente() {
-		return utente;
+		return utenti;
 	}
-	public void setUtente(Utente utente) {
-		this.utente = utente;
+	public void setUtente(Utente utenti) {
+		this.utenti = utenti;
 	}
 	public Destinazioni getDestinazione() {
 		return destinazione;
@@ -71,4 +71,5 @@ public class Recensioni {
 		this.destinazione = destinazione;
 	}
 	
+
 }
