@@ -45,8 +45,14 @@ public class AlloggiController {
 		alloggi.setDestinazione(alloggiDetails.getDestinazione());
 		alloggi.setDescrizione(alloggiDetails.getDescrizione());
 		alloggi.setPrezzo(alloggiDetails.getPrezzo());
-		alloggi.setSconto(alloggiDetails.getSconto());
 		alloggi.setStelle(alloggiDetails.getStelle());
+		return alloggiRepository.save(alloggi);
+	}
+	
+	@PutMapping("/{id}/sconto")
+	public Alloggi updateAlloggioSconto(@PathVariable Long id, @RequestBody Alloggi alloggiDetails) {
+		Alloggi alloggi = alloggiRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException ("Alloggio non trovato"));
+		alloggi.setSconto(alloggiDetails.getSconto());
 		return alloggiRepository.save(alloggi);
 	}
 	
