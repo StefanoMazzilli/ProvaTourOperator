@@ -19,6 +19,7 @@ public class Utente {
 	
 	private String nome;
 	private String cognome;
+	private String ruolo;
 	private String email;
 	private String password;
 	private String confermaPassword;
@@ -76,6 +77,24 @@ public class Utente {
 	}
 	public void setPrivacyLetta(boolean privacyLetta) {
 		this.privacyLetta = privacyLetta;
+	}
+	public String getRuolo() {
+		return ruolo;
+	}
+	public void setRuolo(String ruolo) {
+		this.ruolo = ruolo;
+	}
+	public List<Recensioni> getRecensione() {
+		return recensione;
+	}
+	public void setRecensione(List<Recensioni> recensione) {
+		this.recensione = recensione;
+	}
+	public List<Preventivo> getPreventivo() {
+		return preventivo;
+	}
+	public void setPreventivo(List<Preventivo> preventivo) {
+		this.preventivo = preventivo;
 	}
 	
 }
